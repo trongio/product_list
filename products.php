@@ -4,7 +4,7 @@ namespace app;
 <!doctype html>
 <html lang="en">
 <head>
-    <title>sign up</title>
+    <title>Product List</title>
 
     <!--Css-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
