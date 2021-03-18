@@ -27,16 +27,18 @@ namespace app;
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Product Add</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+<nav class="navbar-expand-lg navbar-light bg-light">
+    <div class="navbar container_wrapper" >
+        <a class="navbar-brand" href="/add.php">Product Add</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto"></ul>
-        <button type="submit" form="form" name="save" class="btn btn-outline-success" id="save">Save</button>
-        <a class="btn btn-outline-success ml-2" href="/products.php">Cancel</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto"></ul>
+            <button type="submit" form="form" name="save" class="btn btn-outline-success" id="save">Save</button>
+            <a class="btn btn-outline-success ml-2" href="/products.php">Cancel</a>
+        </div>
     </div>
 </nav>
 
@@ -77,11 +79,11 @@ namespace app;
 
         <div id="info">
             <div class="form-group row">
-             <label class="col-sm-1 col-form-label col-form-label-sm" >Size (MB)</label>
-                 <div class="col-sm-5">
-                          <input name="size" type="number" class="form-control mb-2 mr-sm-2" required>
-                      </div>
-             </div>
+                <label class="col-sm-1 col-form-label col-form-label-sm" >Size (MB)</label>
+                <div class="col-sm-5">
+                    <input name="size" type="number" step="0.01" class="form-control mb-2 mr-sm-2" required>
+                </div>
+            </div>
         </div>
 
 
