@@ -1,0 +1,107 @@
+$bg-color-2: #0e1011;
+$text-color: aliceblue;
+$btn-color: rgb(46, 46, 94);
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+  text-decoration: none;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 46px;
+}
+
+h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 36px;
+}
+
+h3 {
+  font-family: 'Pacifico', cursive;
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+
+header {
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 99;
+  box-shadow: 0 -47px 37px 9px white;
+
+  .header {
+    padding: 15px 10px;
+    display: flex;
+  
+    .logo {
+      width: 100%;
+    }
+  
+    .menu {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 7px;
+      
+      ul {
+        display: flex;
+        list-style: none;
+  
+        li {
+
+          a {
+            line-height: 40px;
+            margin-left: 30px;
+            text-decoration: none;
+            color: aliceblue;
+          }
+        }
+      }
+    }
+  }
+}
+
+.products {
+  padding: 50px 0;
+  
+  .grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-row-gap: 20px;
+
+    .card {
+      width: 300px;
+    }
+
+    .card-info{
+      text-align: center;
+    }
+      
+    }
+}
+
+
+
+footer {
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+
+  p {
+    padding: 30px 0;
+  }
+}
