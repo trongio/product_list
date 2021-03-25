@@ -18,7 +18,7 @@ try {
     $sql = "CREATE TABLE products (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
         type VARCHAR(255) NOT NULL, 
-        sku VARCHAR(255) NOT NULL,
+        sku VARCHAR(255) unique NOT NULL,
         name VARCHAR(255) NOT NULL,
         price integer NOT NULL,
         info VARCHAR(255) NOT NULL

@@ -52,35 +52,17 @@ namespace app;
             use app\db\Database;
 
             require_once __DIR__ . '/db/Database.php';
+            require_once __DIR__.'/model/Book.php';
+            require_once __DIR__.'/model/DVD.php';
+            require_once __DIR__.'/model/Furniture.php';
+            require_once __DIR__.'/model/ProductBase.php';
 
             $db=new Database();
 
             $products=$db->getProducts();
-
             foreach ($products as $product) {
-                if($product["type"]=="DVD"){
-                    $before="size:";
-                    $after="MB";
-                } elseif ($product["type"]=="book"){
-                    $before="weight:";
-                    $after="kg";
-                } elseif ($product["type"]=="furniture"){
-                    $before="Dimensions:";
-                    $after="CM";
-                }
-                echo '
-                    <div id="' . $product["id"] . '" class="card" >
-                        <div class="card-body">
-                            <input type="checkbox" name="checkbox[]" value="' . $product["id"] . '">
-                            <div class="card-info">
-                                <h3>' . $product["sku"] . '</h3>
-                                <h3>' . $product["name"] . '</h3>
-                                <h3>' . $product["price"] . ' $</h3>
-                                <h3>'. $before. " " .$product["info"]. " " . $after . '</h3>
-                            </div>
-                        </div>
-                    </div>
-                    ';
+                $product = new $product['type']($product['sku'], $product['type'], $product['name'], $product['price'], $product['info']);
+                echo $product->render();
             }
             ?>
         </form>

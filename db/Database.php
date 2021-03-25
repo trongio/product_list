@@ -40,9 +40,22 @@ class Database
         return $products;
     }
 
-    public function Delete($delID){
-        $statement = $this->pdo->prepare("DELETE FROM products WHERE id=:delID");
-        $statement->bindValue(':delID',$delID);
+    public function checkSku($sku){
+        $statement = $this->pdo->prepare("SELECT * FROM products where sku=:sku");
+        $statement->bindValue(':sku',$sku);
+        $statement->execute();
+        $products =  $statement->fetchAll(PDO::FETCH_ASSOC);
+        if ($products[0]){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function delete($delSku){
+        $statement = $this->pdo->prepare("DELETE FROM products WHERE sku=:delSku");
+        $statement->bindValue(':delSku',$delSku);
         $statement->execute();
 
     }
