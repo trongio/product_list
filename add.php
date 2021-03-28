@@ -16,7 +16,7 @@ namespace app;
 
     <!--scripts and js-->
     <script src="https://kit.fontawesome.com/8893af1676.js" crossorigin="anonymous"></script>
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </head>
@@ -31,33 +31,33 @@ namespace app;
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto"></ul>
-            <button type="submit" form="form" name="save" class="btn btn-outline-success" onclick="concatenateDimension()" id="save">Save</button>
+            <button name="save" class="btn btn-outline-success" id="save">Save</button>
             <a class="btn btn-outline-success ml-2" href="/products.php">Cancel</a>
         </div>
     </div>
 </nav>
 
 <section class="container">
-    <form method="post" action="controllers/AddController.php" id="form" class="mt-5 form">
+    <div id="form" class="mt-5 form">
 
         <div class="form-group row">
             <label class="col-sm-1 col-form-label col-form-label-sm" >SKU</label>
             <div class="col-sm-5">
-                <input name="sku" type="text" class="form-control mb-2 mr-sm-2" required>
+                <input id="sku" name="sku" type="text" class="form-control mb-2 mr-sm-2" required>
             </div>
         </div>
 
         <div class="form-group row">
             <label class="col-sm-1 col-form-label col-form-label-sm" >Name</label>
             <div class="col-sm-5">
-                <input name="name" type="text" class="form-control mb-2 mr-sm-2" required>
+                <input id="name" name="name" type="text" class="form-control mb-2 mr-sm-2" required>
             </div>
         </div>
 
         <div class="form-group row">
             <label class="col-sm-1 col-form-label col-form-label-sm" >Price ($)</label>
             <div class="col-sm-5">
-                <input name="price" type="number" step="0.01" min="0" class="form-control mb-2 mr-sm-2" required>
+                <input id="price" name="price" type="number" step="0.01" min="0" class="form-control mb-2 mr-sm-2" required>
             </div>
         </div>
 
@@ -76,13 +76,14 @@ namespace app;
             <div class="form-group row">
                 <label class="col-sm-1 col-form-label col-form-label-sm" >Size (MB)</label>
                 <div class="col-sm-5">
-                    <input name="data" type="number" step="0.01" min="0" class="form-control mb-2 mr-sm-2" required>
+                    <input id="data" name="data" type="number" step="0.01" min="0" class="form-control mb-2 mr-sm-2 size" required>
                 </div>
             </div>
         </div>
 
 
-    </form>
+    </div>
+    <div id="serverResponse" class="none alert alert-danger" role="alert"></div>
 </section>
 
 <footer class="footer mt-auto py-3 bg-light">

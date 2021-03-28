@@ -45,7 +45,7 @@ class Database
         $statement->bindValue(':sku',$sku);
         $statement->execute();
         $products =  $statement->fetchAll(PDO::FETCH_ASSOC);
-        if ($products[0]){
+        if ($products){
             return true;
         }
         else{
